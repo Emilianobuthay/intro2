@@ -1,0 +1,135 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--index: calc(1vw + 1vh);
+	--gutter: 30px;
+	--side-small: 26;
+	--side-big: 36;
+	--depth: 4000px;
+	--transition: .75s cubic-bezier(.075, .5, 0, 1)
+}
+
+/* Скрываем Scrollbar */
+body {
+	scrollbar-width: none; /* Firefox */
+}
+body::-webkit-scrollbar { 
+	display: none; /* Safari and Chrome */
+}
+
+
+body {
+	background-color: #000;
+	color: #fff !important;
+	font-size: calc(var(--index) * .8) !important;
+	font-family: sans-serif ;
+	line-height: 1.75 !important;
+	height: var(--depth) !important;
+	font-weight: 300 !important;
+}
+.container-intro {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	perspective: 1500px;
+}
+.gallery-1 {
+	transform-style: preserve-3d;
+	height: 100%;
+}
+.frame1 {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: var(--transition), opacity .75s ease;
+	will-change: transform;
+	transform-style: preserve-3d;
+}
+.frame__content1{
+  pointer-events: visible;
+  width: auto;
+  height: auto;
+}
+h1, h2, h3, h4 {
+	font-weight: 100;
+	text-transform: uppercase;
+	width: min-content;
+	line-height: 1;
+}
+.frame1 h2 {
+	text-align: center;
+	font-size: calc(var(--index) * 3.3);
+}
+.frame-media1 {
+	position: relative;
+	width: calc(var(--index) * var(--side-small));
+	height: calc(var(--index) * var(--side-big));
+	background-position: center;
+	background-size: cover;
+}
+.frame-media_left1 {
+	right: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+}
+.frame-media_right1 {
+	left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+}
+.frame_bg1 {
+	background-color: rgb(0 0 0 / .87);
+}
+.frame-media1 {
+	width: calc(var(--index) * var(--side-big));
+	height: calc(var(--index) * var(--side-small));
+}
+.frame-media_right1 {
+	left: calc(var(--side-big) / 2 * var(--index) + var(--gutter));
+}
+.frame-media_left1 {
+	right: calc(var(--side-big) / 2 * var(--index) + var(--gutter));
+}
+.text-right > * {
+	position: relative;
+	left: 18vw;
+}
+.text-left > * {
+	position: relative;
+	right: 18vw;
+}
+.frame1 h3 {
+	font-size: calc(var(--index) * 3);
+}
+.frame1 p {
+	max-width: 30vw;
+	margin-top: 3vh;
+}
+.soundbutton {
+	position: fixed;
+	bottom: 5vh;
+	right: 5vw;
+	cursor: pointer;
+	width: 24px;
+	transition: .25s ease;
+}
+.soundbutton.paused {
+	opacity: .25;
+}
+ .imag1{
+  background-image: url(images/1.jpg)
+ }
+ .imag2{
+  background-image: url(images/2.jpg)
+ }
+ .imag3{
+  background-image: url(images/3.jpg)
+ }
+ .imag4{
+  background-image: url(images/4.jpg)
+ }
+ .imag5{
+  background-image: url(images/5.jpg)
+ }
